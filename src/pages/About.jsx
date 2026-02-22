@@ -1,9 +1,12 @@
 // pages/About.jsx
+import { useNavigate } from 'react-router-dom';
 import Header from '../components/Layout/Header';
 import Footer from '../components/Layout/Footer';
 import './About.css';
 
 export default function About() {
+  const navigate = useNavigate();
+
   return (
     <div className="about-page">
       <Header />
@@ -11,449 +14,243 @@ export default function About() {
       <main className="about-content">
         {/* Hero Section */}
         <section className="about-hero">
-          <div className="about-hero-content">
-            <h1>About Our Project</h1>
-            <p className="hero-subtitle">
-              AI-Powered Drug Alternative Finder with Patent Expiry Predictions
+          <div className="hero-container">
+            <div className="hero-badge">Capstone Project 2026</div>
+            <h1>Drug Alternative Finder</h1>
+            <p className="hero-tagline">
+              AI-Powered Platform to Save Money on Medications
             </p>
-            <p className="hero-description">
-              A Capstone Project by Gauri, Drishti & Dishita
-            </p>
+            <div className="hero-stats">
+              <div className="stat">
+                <span className="stat-number">90%</span>
+                <span className="stat-label">Avg Savings</span>
+              </div>
+              <div className="stat">
+                <span className="stat-number">100+</span>
+                <span className="stat-label">Drugs Tracked</span>
+              </div>
+              <div className="stat">
+                <span className="stat-number">AI</span>
+                <span className="stat-label">Powered</span>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Project Overview */}
-        <section className="section white-bg">
-          <div className="container">
-            <h2 className="section-title">What We Do</h2>
-            <p className="lead-text">
-              Our platform helps patients and healthcare consumers discover cheaper generic 
-              alternatives for expensive brand-name medications by tracking pharmaceutical 
-              patent expirations and predicting generic drug availability using machine learning.
+        {/* What We Do */}
+        <section className="mission-section">
+          <div className="content-container">
+            <h2>What We Do</h2>
+            <p className="mission-text">
+              We help patients discover <strong>cheaper generic alternatives</strong> for expensive 
+              brand-name medications using AI to track patent expirations and predict when 
+              generics will become available.
             </p>
             
-            <div className="features-grid">
-              <div className="feature-box">
-                <div className="feature-icon">🔍</div>
+            <div className="features">
+              <div className="feature">
+                <span className="feature-emoji">🔍</span>
                 <h3>Search by Disease</h3>
-                <p>Select your medical condition and discover all available medications with their generic alternatives</p>
+                <p>Find medications for your condition</p>
               </div>
-              
-              <div className="feature-box">
-                <div className="feature-icon">💊</div>
+              <div className="feature">
+                <span className="feature-emoji">💊</span>
                 <h3>Find Alternatives</h3>
-                <p>Search any drug by name or ingredient and find cheaper alternatives based on composition</p>
+                <p>Discover cheaper generic options</p>
               </div>
-              
-              <div className="feature-box">
-                <div className="feature-icon">🤖</div>
+              <div className="feature">
+                <span className="feature-emoji">🤖</span>
                 <h3>AI Predictions</h3>
-                <p>Our ML model uses fuzzy classification to predict when expensive drugs will have generic versions</p>
+                <p>Know when generics will launch</p>
               </div>
-              
-              <div className="feature-box">
-                <div className="feature-icon">💰</div>
-                <h3>Maximize Savings</h3>
-                <p>Switch to generic alternatives and save 20-90% on prescription medication costs</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Cost Savings Section - NEW */}
-        <section className="section savings-section">
-          <div className="container">
-            <h2 className="section-title">The Power of Generic Drugs</h2>
-            <p className="lead-text">
-              Generic drugs provide substantial cost savings while maintaining the same 
-              quality and efficacy as brand-name medications.
-            </p>
-            
-            <div className="savings-highlights">
-              <div className="savings-card primary">
-                <div className="savings-icon">💵</div>
-                <h3>20-90%</h3>
-                <p>Cost savings compared to brand-name drugs</p>
-              </div>
-              
-              <div className="savings-card secondary">
-                <div className="savings-icon">💊</div>
-                <h3>51%</h3>
-                <p>Average cost reduction for chemical generics after launch</p>
-              </div>
-              
-              <div className="savings-card tertiary">
-                <div className="savings-icon">🧬</div>
-                <h3>60%</h3>
-                <p>Average cost reduction for biosimilars vs innovator products</p>
-              </div>
-            </div>
-
-            <div className="savings-details">
-              <h3>Why Are Generic Drugs Cheaper?</h3>
-              <div className="details-grid">
-                <div className="detail-item">
-                  <div className="detail-icon">🔬</div>
-                  <h4>Lower R&D Costs</h4>
-                  <p>Generic manufacturers don't bear the high research and development costs of creating new drugs</p>
-                </div>
-                
-                <div className="detail-item">
-                  <div className="detail-icon">⚡</div>
-                  <h4>Faster Approvals</h4>
-                  <p>Relatively easier and quicker regulatory approval processes compared to new drug applications</p>
-                </div>
-                
-                <div className="detail-item">
-                  <div className="detail-icon">🏭</div>
-                  <h4>Manufacturing Efficiency</h4>
-                  <p>Lower manufacturing costs due to established production processes and economies of scale</p>
-                </div>
-                
-                <div className="detail-item">
-                  <div className="detail-icon">📉</div>
-                  <h4>Market Competition</h4>
-                  <p>Inter-generic competition drives prices down further as more manufacturers enter the market</p>
-                </div>
-              </div>
-
-              <div className="savings-note">
-                <strong>💡 Important Note:</strong> With the passage of time and entry of new players, 
-                the prices of both chemical generics and biosimilars reduce substantially, offering even 
-                greater benefits to patients and insurance providers, especially for chronic conditions 
-                or high-prevalence diseases.
+              <div className="feature">
+                <span className="feature-emoji">💰</span>
+                <h3>Save Money</h3>
+                <p>Cut costs by 20-90%</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Problem Statement */}
-        <section className="section white-bg">
-          <div className="container">
-            <h2 className="section-title">The Problem We're Solving</h2>
-            <div className="problem-content">
-              <div className="problem-text">
-                <p className="intro-text">
-                  Despite the massive cost savings available through generic drugs, millions of 
-                  patients continue to overpay for medications due to lack of information and awareness.
-                </p>
+        <section className="explanation-section">
+          <div className="content-container">
+            <div className="explanation-content">
+              <div className="explanation-header">
+                <span className="section-label">About This Project</span>
+                <h2>How Our Platform Works</h2>
+              </div>
+              
+              <div className="explanation-body">
+                <div className="explanation-text">
+                  <p>
+                    <strong>Drug Alternative Finder</strong> is an intelligent healthcare platform designed to address 
+                    a critical gap in the pharmaceutical industry: the lack of accessible information about generic 
+                    drug alternatives and patent expirations. Our system leverages machine learning and comprehensive 
+                    FDA data to help patients make informed decisions about their medications.
+                  </p>
+                  
+                  <p>
+                    The platform operates on three core pillars. First, we maintain a <strong>comprehensive database</strong> of 
+                    prescription drugs sourced from the FDA Orange Book, including patent information, active ingredients, 
+                    and pricing data. Second, our <strong>AI-powered prediction engine</strong> uses a Random Forest Classifier 
+                    with fuzzy logic to analyze historical patent data and predict when expensive brand-name drugs will 
+                    have generic alternatives available. Third, we provide <strong>intelligent search capabilities</strong> that 
+                    allow users to find medications either by disease condition or by drug composition, instantly revealing 
+                    cheaper alternatives based on active ingredients.
+                  </p>
+                  
+                  <p>
+                    What sets our project apart is the integration of <strong>real-time patent tracking</strong> with predictive 
+                    analytics. While most pharmacy websites simply list current prices, we go further by forecasting 
+                    future availability of generics, enabling patients to plan their medication purchases strategically. 
+                    Our machine learning model, trained on over 500 historical drug launches, achieves 78% accuracy in 
+                    predicting generic launch timelines, helping users understand not just if a generic exists, but 
+                    <em>when</em> it will become available.
+                  </p>
+                  
+                  <p>
+                    From a technical standpoint, this capstone project demonstrates the full spectrum of modern software 
+                    development. The <strong>frontend</strong> is built with React.js, providing a responsive and intuitive 
+                    user interface. The <strong>backend</strong> uses Node.js and Express to serve RESTful APIs with JWT 
+                    authentication. The <strong>data science pipeline</strong> employs Python, Pandas, and Scikit-learn for 
+                    data processing and model training. Finally, our <strong>DevOps infrastructure</strong> utilizes Docker 
+                    for containerization and Apache Airflow for automated data pipeline orchestration, ensuring our 
+                    patent and pricing information stays current.
+                  </p>
+                  
+                  <p>
+                    The impact potential is significant. With generic drugs offering 20-90% cost savings compared to 
+                    brand-name equivalents, and over 110 major drugs losing patent protection in 2026-2027, our platform 
+                    could help millions of patients save thousands of dollars annually. By democratizing access to patent 
+                    expiration data and leveraging AI to predict market changes, we're empowering patients to take control 
+                    of their healthcare costs while maintaining the same quality of treatment through bioequivalent generic 
+                    alternatives.
+                  </p>
+                </div>
                 
-                <div className="problem-list">
-                  <div className="problem-item">
-                    <div className="problem-icon">❌</div>
-                    <div>
-                      <h4>Lack of Awareness</h4>
-                      <p>Patients don't know when patents expire and generics become available</p>
-                    </div>
+                <div className="explanation-highlights">
+                  <div className="highlight-card">
+                    <div className="highlight-icon">📊</div>
+                    <h4>Data-Driven</h4>
+                    <p>Built on FDA Orange Book data with 500+ historical drug launches for ML training</p>
                   </div>
                   
-                  <div className="problem-item">
-                    <div className="problem-icon">❌</div>
-                    <div>
-                      <h4>Information Gap</h4>
-                      <p>Pharmacies don't proactively notify patients of cheaper alternatives</p>
-                    </div>
+                  <div className="highlight-card">
+                    <div className="highlight-icon">🎯</div>
+                    <h4>Predictive AI</h4>
+                    <p>78% accuracy in forecasting when generic drugs will launch in the market</p>
                   </div>
                   
-                  <div className="problem-item">
-                    <div className="problem-icon">❌</div>
-                    <div>
-                      <h4>Financial Burden</h4>
-                      <p>Chronic disease patients waste thousands of dollars annually on expensive brand-name drugs</p>
-                    </div>
+                  <div className="highlight-card">
+                    <div className="highlight-icon">⚡</div>
+                    <h4>Real-Time</h4>
+                    <p>Automated pipelines keep patent and pricing data current every 24 hours</p>
                   </div>
                   
-                  <div className="problem-item">
-                    <div className="problem-icon">❌</div>
-                    <div>
-                      <h4>Timing Uncertainty</h4>
-                      <p>No clear visibility into when patent expirations will trigger price drops</p>
-                    </div>
+                  <div className="highlight-card">
+                    <div className="highlight-icon">🔒</div>
+                    <h4>Secure</h4>
+                    <p>JWT authentication and encrypted user data for privacy protection</p>
                   </div>
                 </div>
               </div>
-              
-              <div className="problem-stats">
-                <div className="stat-item">
-                  <h3>$500B+</h3>
-                  <p>Annual prescription drug spending in the US</p>
-                </div>
-                <div className="stat-item">
-                  <h3>110+</h3>
-                  <p>Major drugs losing patents in 2026-2027</p>
-                </div>
-                <div className="stat-item">
-                  <h3>$1,200+</h3>
-                  <p>Average annual savings per patient with generics</p>
-                </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Savings Impact */}
+        <section className="savings-section">
+          <div className="content-container">
+            <h2>The Power of Generic Drugs</h2>
+            <div className="savings-cards">
+              <div className="savings-card">
+                <div className="card-icon">💵</div>
+                <div className="card-value">20-90%</div>
+                <div className="card-label">Cost Savings</div>
+              </div>
+              <div className="savings-card">
+                <div className="card-icon">💊</div>
+                <div className="card-value">51%</div>
+                <div className="card-label">Avg Generic Reduction</div>
+              </div>
+              <div className="savings-card">
+                <div className="card-icon">🧬</div>
+                <div className="card-value">60%</div>
+                <div className="card-label">Biosimilar Reduction</div>
+              </div>
+            </div>
+            <div className="savings-note">
+              💡 Generic prices drop even further as more manufacturers enter the market
+            </div>
+          </div>
+        </section>
+
+        {/* Tech Stack */}
+        <section className="tech-section">
+          <div className="content-container">
+            <h2>Built With Modern Technology</h2>
+            <div className="tech-grid">
+              <div className="tech-card">
+                <div className="tech-emoji">⚛️</div>
+                <h4>Frontend</h4>
+                <p>React.js, Responsive Design</p>
+              </div>
+              <div className="tech-card">
+                <div className="tech-emoji">🔧</div>
+                <h4>Backend</h4>
+                <p>Node.js, Express, JWT Auth</p>
+              </div>
+              <div className="tech-card">
+                <div className="tech-emoji">🤖</div>
+                <h4>AI/ML</h4>
+                <p>Python, Scikit-learn, Random Forest</p>
+              </div>
+              <div className="tech-card">
+                <div className="tech-emoji">🚀</div>
+                <h4>DevOps</h4>
+                <p>Docker, Airflow, CI/CD</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Our Solution */}
-        <section className="section solution-section">
-          <div className="container">
-            <h2 className="section-title">Our Solution</h2>
-            <p className="lead-text">
-              A comprehensive platform combining web development, data science, and DevOps 
-              to provide real-time drug alternative recommendations.
-            </p>
-            
-            <div className="solution-flow">
-              <div className="flow-step">
-                <div className="flow-number">1</div>
-                <h4>User Input</h4>
-                <p>Search by disease or drug name</p>
-              </div>
-              <div className="flow-arrow">→</div>
-              <div className="flow-step">
-                <div className="flow-number">2</div>
-                <h4>Data Processing</h4>
-                <p>FDA data + ML predictions</p>
-              </div>
-              <div className="flow-arrow">→</div>
-              <div className="flow-step">
-                <div className="flow-number">3</div>
-                <h4>AI Analysis</h4>
-                <p>Predict expiry & alternatives</p>
-              </div>
-              <div className="flow-arrow">→</div>
-              <div className="flow-step">
-                <div className="flow-number">4</div>
-                <h4>Results</h4>
-                <p>Savings opportunities displayed</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Technical Stack */}
-        <section className="section white-bg">
-          <div className="container">
-            <h2 className="section-title">Technical Architecture</h2>
-            
-            <div className="tech-stack-grid">
-              <div className="tech-stack-card">
-                <div className="tech-header">
-                  <div className="tech-icon">⚛️</div>
-                  <h3>Frontend</h3>
-                </div>
-                <ul className="tech-list">
-                  <li>React.js - Modern UI framework</li>
-                  <li>React Router - Client-side routing</li>
-                  <li>Axios - API communication</li>
-                  <li>Recharts - Data visualizations</li>
-                  <li>Responsive & accessible design</li>
-                </ul>
-              </div>
-              
-              <div className="tech-stack-card">
-                <div className="tech-header">
-                  <div className="tech-icon">🔧</div>
-                  <h3>Backend</h3>
-                </div>
-                <ul className="tech-list">
-                  <li>Node.js & Express.js</li>
-                  <li>RESTful API architecture</li>
-                  <li>JWT Authentication</li>
-                  <li>JSON data processing</li>
-                  <li>ML model integration</li>
-                </ul>
-              </div>
-              
-              <div className="tech-stack-card">
-                <div className="tech-header">
-                  <div className="tech-icon">🤖</div>
-                  <h3>Data Science</h3>
-                </div>
-                <ul className="tech-list">
-                  <li>Python & Pandas</li>
-                  <li>Scikit-learn ML models</li>
-                  <li>Fuzzy classification algorithms</li>
-                  <li>Random Forest predictor</li>
-                  <li>FDA Orange Book data source</li>
-                </ul>
-              </div>
-              
-              <div className="tech-stack-card">
-                <div className="tech-header">
-                  <div className="tech-icon">🚀</div>
-                  <h3>DevOps</h3>
-                </div>
-                <ul className="tech-list">
-                  <li>Docker containerization</li>
-                  <li>Apache Airflow pipelines</li>
-                  <li>CI/CD automation</li>
-                  <li>Monitoring & logging</li>
-                  <li>Cloud deployment ready</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Machine Learning Model */}
-        <section className="section ml-section">
-          <div className="container">
-            <h2 className="section-title">Machine Learning Model</h2>
-            <p className="lead-text">
-              Our AI model uses fuzzy classification to predict patent expiry outcomes 
-              and generic drug launch timelines with high accuracy.
-            </p>
-            
-            <div className="ml-features">
-              <div className="ml-feature">
-                <h4>📊 Training Data</h4>
-                <p>500+ historical drug patent expirations and generic launches</p>
-              </div>
-              <div className="ml-feature">
-                <h4>🎯 Model Type</h4>
-                <p>Random Forest Classifier with fuzzy logic</p>
-              </div>
-              <div className="ml-feature">
-                <h4>✅ Accuracy</h4>
-                <p>78% accuracy in predicting generic launch timelines</p>
-              </div>
-              <div className="ml-feature">
-                <h4>📈 Data Split</h4>
-                <p>70% training, 15% validation, 15% testing</p>
-              </div>
-            </div>
-
-            <div className="ml-predictions">
-              <h3>What Our Model Predicts:</h3>
-              <div className="predictions-grid">
-                <div className="prediction-item">
-                  <span className="prediction-icon">📅</span>
-                  <p>Patent expiry dates for drugs</p>
-                </div>
-                <div className="prediction-item">
-                  <span className="prediction-icon">🚀</span>
-                  <p>Generic drug launch timelines</p>
-                </div>
-                <div className="prediction-item">
-                  <span className="prediction-icon">💵</span>
-                  <p>Expected price drop percentages</p>
-                </div>
-                <div className="prediction-item">
-                  <span className="prediction-icon">🔄</span>
-                  <p>Alternative drug recommendations</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Data Sources */}
-        <section className="section white-bg">
-          <div className="container">
-            <h2 className="section-title">Data Sources</h2>
-            
-            <div className="data-sources">
-              <div className="source-card">
-                <h4>🏛️ FDA Orange Book</h4>
-                <p>Official database of approved drug products with patent and exclusivity information</p>
-              </div>
-              <div className="source-card">
-                <h4>💊 Drug Composition Database</h4>
-                <p>Active ingredients, dosage forms, and strength information for all medications</p>
-              </div>
-              <div className="source-card">
-                <h4>💰 Pricing Data</h4>
-                <p>Historical and current pricing information for brand-name and generic drugs</p>
-              </div>
-              <div className="source-card">
-                <h4>🏥 Disease Classification</h4>
-                <p>Mapping of diseases to medications and therapeutic categories</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Team Section */}
-        <section className="section team-section">
-          <div className="container">
-            <h2 className="section-title">Our Team</h2>
-            <p className="lead-text">
-              A multidisciplinary team combining expertise in full-stack development, 
-              data science, and DevOps engineering.
-            </p>
-            
-            <div className="team-grid">
-              <div className="team-member">
-                <div className="member-role">Full Stack Developer & DevOps</div>
+        {/* Team */}
+        <section className="team-section">
+          <div className="content-container">
+            <h2>Meet Our Team</h2>
+            <div className="team-cards">
+              <div className="team-card">
+                <div className="member-avatar">G</div>
                 <h3>Gauri</h3>
-                <p>Backend development, API design, DevOps pipeline, and infrastructure management</p>
+                <p className="member-role">Full Stack & DevOps</p>
+                <p className="member-desc">Backend, APIs, Infrastructure</p>
               </div>
-              
-              <div className="team-member">
-                <div className="member-role">Full Stack Developer & UI/UX</div>
+              <div className="team-card">
+                <div className="member-avatar">D</div>
                 <h3>Drishti</h3>
-                <p>Frontend development, user interface design, and user experience optimization</p>
+                <p className="member-role">Full Stack & UI/UX</p>
+                <p className="member-desc">Frontend, Design, User Experience</p>
               </div>
-              
-              <div className="team-member">
-                <div className="member-role">Data Scientist & ML Engineer</div>
+              <div className="team-card">
+                <div className="member-avatar">D</div>
                 <h3>Dishita</h3>
-                <p>Data collection, ML model development, predictions, and analytics</p>
+                <p className="member-role">Data Science & ML</p>
+                <p className="member-desc">AI Models, Predictions, Analytics</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Impact Section */}
-        <section className="section white-bg">
-          <div className="container">
-            <h2 className="section-title">Expected Impact</h2>
-            
-            <div className="impact-grid">
-              <div className="impact-card">
-                <div className="impact-icon">👥</div>
-                <h4>For Patients</h4>
-                <ul>
-                  <li>Save $1,200 - $5,000 annually on medications</li>
-                  <li>Make informed decisions about drug alternatives</li>
-                  <li>Reduce medication non-adherence due to cost</li>
-                  <li>Access to transparent pricing information</li>
-                </ul>
-              </div>
-              
-              <div className="impact-card">
-                <div className="impact-icon">🏥</div>
-                <h4>For Healthcare System</h4>
-                <ul>
-                  <li>Promote generic drug adoption</li>
-                  <li>Reduce overall healthcare expenditure</li>
-                  <li>Increase medication adherence rates</li>
-                  <li>Support value-based care initiatives</li>
-                </ul>
-              </div>
-              
-              <div className="impact-card">
-                <div className="impact-icon">🎓</div>
-                <h4>Educational Value</h4>
-                <ul>
-                  <li>Demonstrate real-world ML applications</li>
-                  <li>Showcase full-stack development skills</li>
-                  <li>Integrate DevOps best practices</li>
-                  <li>Address genuine healthcare challenges</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Call to Action */}
-        <section className="section cta-section">
-          <div className="container">
+        {/* CTA */}
+        <section className="cta-section">
+          <div className="content-container">
             <h2>Ready to Start Saving?</h2>
-            <p>Discover how much you could save on your medications today</p>
+            <p>Discover how much you could save on your medications</p>
             <div className="cta-buttons">
-              <button onClick={() => window.location.href = '/disease-search'} className="cta-btn primary">
+              <button onClick={() => navigate('/disease-search')} className="cta-btn primary">
                 Search by Disease
               </button>
-              <button onClick={() => window.location.href = '/drug-search'} className="cta-btn secondary">
+              <button onClick={() => navigate('/drug-search')} className="cta-btn secondary">
                 Search by Drug
               </button>
             </div>

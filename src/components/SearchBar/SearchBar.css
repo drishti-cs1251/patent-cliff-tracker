@@ -1,0 +1,473 @@
+/* components/SearchBar/SearchBar.css */
+
+.search-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Header */
+.search-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.search-header h2 {
+  font-size: 36px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.search-header p {
+  color: #7f8c8d;
+  font-size: 16px;
+}
+
+/* Search Form */
+.search-form {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  display: flex;
+  gap: 10px;
+}
+
+.search-input-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  color: #999;
+}
+
+.search-input {
+  width: 100%;
+  padding: 15px 45px 15px 45px;
+  font-size: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.clear-button {
+  position: absolute;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s;
+}
+
+.clear-button:hover {
+  color: #666;
+}
+
+.search-button {
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.search-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.search-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading p {
+  color: #7f8c8d;
+  font-size: 16px;
+}
+
+/* Error Message */
+.error-message {
+  background: #fee;
+  color: #c33;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 700px;
+  text-align: center;
+}
+
+/* Search Results */
+.search-results {
+  margin-top: 40px;
+}
+
+.search-results h3 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.results-hint {
+  color: #7f8c8d;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.result-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.result-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.result-card h4 {
+  font-size: 20px;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge.green {
+  background: #d4edda;
+  color: #155724;
+}
+
+.badge.orange {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.generic-name {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.drug-info {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #999;
+}
+
+.expiry-info {
+  font-size: 12px;
+  color: #999;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.view-btn {
+  width: 100%;
+  padding: 10px;
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #667eea;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.view-btn:hover {
+  background: #667eea;
+  color: white;
+}
+
+/* Alternatives Section */
+.alternatives-section {
+  margin-top: 40px;
+}
+
+.alternatives-header {
+  background: #f8f9fa;
+  padding: 25px 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.alternatives-header h3 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.active-ingredient {
+  color: #666;
+  font-size: 15px;
+}
+
+.active-ingredient strong {
+  color: #2c3e50;
+}
+
+.back-button {
+  padding: 10px 20px;
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.back-button:hover {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+/* Alternatives Grid */
+.alternatives-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.alternative-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.alternative-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+.alternative-card.original {
+  border-color: #667eea;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+}
+
+.card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.card-badge.original {
+  background: #667eea;
+  color: white;
+}
+
+.card-badge.alternative {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  padding-right: 100px;
+}
+
+.alternative-card h4 {
+  font-size: 20px;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.drug-details {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.expiry-date {
+  font-size: 12px;
+  color: #999;
+  font-style: italic;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* No Alternatives */
+.no-alternatives {
+  text-align: center;
+  padding: 80px 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.no-alt-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.no-alternatives p {
+  color: #666;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.no-alternatives .hint {
+  font-size: 14px;
+  color: #999;
+}
+
+/* No Results */
+.no-results {
+  text-align: center;
+  padding: 80px 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  margin-top: 40px;
+}
+
+.no-results-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.no-results h3 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.no-results p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.suggestions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.suggestions button {
+  padding: 10px 20px;
+  background: white;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  color: #667eea;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.suggestions button:hover {
+  background: #667eea;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-form {
+    flex-direction: column;
+  }
+
+  .search-button {
+    width: 100%;
+  }
+
+  .results-grid,
+  .alternatives-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .alternatives-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .back-button {
+    width: 100%;
+  }
+
+  .search-header h2 {
+    font-size: 28px;
+  }
+}

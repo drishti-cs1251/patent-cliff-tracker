@@ -1,9 +1,12 @@
 // pages/Auth/RegisterPage.jsx
 import Register from '../../components/Auth/Register';
+import Header from '../../components/Layout/Header';
 import './AuthPages.css';
 
 export default function RegisterPage() {
   return (
+    <div className="auth-page-wrapper">
+      <Header />
     <div className="auth-page">
       <div className="auth-container">
         <div className="auth-header">
@@ -11,6 +14,7 @@ export default function RegisterPage() {
           <p>Track prescription drug patents and save money</p>
         </div>
         <Register />
+      </div>
       </div>
     </div>
   );

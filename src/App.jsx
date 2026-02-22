@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import DiseaseSearch from './pages/DiseaseSearch';
 import About from './pages/About';
+import DrugSearch from './pages/DrugSearch';
 //import './App.css';
 
 // Protected Route Component
@@ -27,6 +28,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/disease-search" element={<DiseaseSearch />} />
+        <Route path="/drug-search" element={<DrugSearch />} />
         <Route path="/about" element={<About />} />
         <Route 
           path="/dashboard" 
